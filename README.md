@@ -1,10 +1,16 @@
-# Space Debris Predictor
+# ISS Conjunction Monitor
 
-Real-time space debris conjunction detection system. Monitors the ISS against 584 tracked debris objects from the Cosmos 2251 collision field, fetching live TLE data from Celestrak and sending Telegram alerts when debris approaches within 50 km.
+Real-time debris conjunction detection system for the International Space Station. Fetches live TLE data from Celestrak and monitors 584 tracked debris objects from the Cosmos 2251 collision field, sending Telegram alerts when any object approaches within 50 km of the ISS.
 
 ## Result
 
 Successfully detected a close approach of **81.73 km** between the ISS and COSMOS 2251 DEB over a 24-hour scan window.
+
+## Scope
+
+- **Primary target:** ISS only
+- **Debris catalog:** 584 objects from the Cosmos 2251 collision
+- **This is not a full SDA system** — it is a focused demonstration of conjunction detection against a single target and debris field
 
 ## How It Works
 
@@ -32,7 +38,15 @@ Successfully detected a close approach of **81.73 km** between the ISS and COSMO
 
 - Uses SGP4 only (no J2 short-period terms, no atmospheric drag)
 - Single-target monitoring (ISS only)
-- 50 km alert threshold is hardcoded (configurable in code)
+- Single debris field (Cosmos 2251 only)
+- 50 km alert threshold is hardcoded
+
+## Future Work
+
+- Extend to all ~35,000 tracked objects
+- Add multiple primary targets (active satellites, other stations)
+- Include additional debris fields (Fengyun, Iridium 33)
+- Replace SGP4 with J2-accurate propagator
 
 ## Author
 
